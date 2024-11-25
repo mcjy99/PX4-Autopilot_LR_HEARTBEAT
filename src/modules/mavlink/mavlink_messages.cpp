@@ -88,6 +88,7 @@
 #include "streams/HYGROMETER_SENSOR.hpp"
 #include "streams/LANDING_TARGET.hpp"
 #include "streams/LOCAL_POSITION_NED.hpp"
+#include "streams/LR_HEARTBEAT.hpp"
 #include "streams/MAG_CAL_REPORT.hpp"
 #include "streams/MANUAL_CONTROL.hpp"
 #include "streams/MOUNT_ORIENTATION.hpp"
@@ -251,6 +252,9 @@ static const StreamListItem streams_list[] = {
 #if defined(HEARTBEAT_HPP)
 	create_stream_list_item<MavlinkStreamHeartbeat>(),
 #endif // HEARTBEAT_HPP
+#if defined(LR_HEARTBEAT_HPP)
+	create_stream_list_item<MavlinkStreamLRHeartbeat>(),
+#endif
 #if defined(STATUSTEXT_HPP)
 	create_stream_list_item<MavlinkStreamStatustext>(),
 #endif // STATUSTEXT_HPP
